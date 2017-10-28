@@ -1,13 +1,5 @@
 <?php include 'inc/header.php'; ?>
-<?php
-if (!isset($_GET['search']) || $_GET['search'] == NULL) {
-	echo "Please enter keywords";
-} else {
-	$std_name = trim(mysqli_real_escape_string($_GET['name']));
-	$std_email= trim(mysqli_real_escape_string(strtolower($_GET['email'])));
 
-	$query = mysqli_connect($db,)
-}
 
 ?>
 
