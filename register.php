@@ -1,7 +1,11 @@
 <?php include 'inc/header.php'; ?>
+<?php 
+if(!isset($_SESSION['username'])){
+    header("Location:index.php?msg=".urlencode("You are not allowed to this page!!!"));
+} else {
+?>
 
-
-<div class="container">
+    <div class="container">
     <div class="text-center">
         <h1 class="nice">Registration Form</h1>
     </div>
@@ -135,8 +139,8 @@
         </div>
     </form>
 </div>
-
-
-
+<?php
+}
+    ?>
 
 <?php include 'inc/footer.php'; ?>

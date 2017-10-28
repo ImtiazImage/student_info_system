@@ -1,20 +1,26 @@
 <?php include 'inc/header.php'; ?>
+<?php 
+if(!isset($_SESSION['username'])){
+    header("Location:index.php?msg=".urlencode("You are not allowed to this page!!!"));
+} else {
+?>
 
 
-<div class="container">
+
+
+    <div class="container">
     <div class="text-center">
         <h1 class="nice">Update Registration Form</h1>
     </div>
-    
-    <form class="form-horizontal" method="post" action="#" enctype="multipart/form-data">
+    <form class="form-horizontal" method="post" action="process/update.php" enctype="multipart/form-data">
     
         <!-- Text input-->
         <div class="form-group">
             <label class="col-md-4 control-label" for="name">Name</label>
 
             <div class="col-md-4">
-                <input  type="text" name="name"  placeholder="Name" class="form-control input-md" required="">
-                <span class="help-block">Please type in your full name</span>
+                <input  type="text" name="name"  value="" class="form-control input-md" required="">
+
             </div>
         </div>
 
@@ -22,7 +28,7 @@
         <div class="form-group">
             <label class="col-md-4 control-label" for="birthDate" >Date of Birth</label>
             <div class="col-md-4">
-                <input type="date" name="dob" class="form-control">
+                <input type="text" name="dob" class="form-control" value="">
             </div>
         </div>
 
@@ -33,13 +39,13 @@
             <div class="col-md-4">
                 <div class="checkbox">
                     <label>
-                        <input name="genderboxes" name="" value="1" type="radio">
+                        <input  name="gender" value="Male" type="radio">
                         Male
                     </label>
                 </div>
                 <div class="checkbox">
                     <label>
-                        <input name="genderboxes" id="genderboxes-1" value="2" type="radio">
+                        <input name="gender" id="genderboxes-1" value="Female" type="radio">
                         Female
                     </label>
                 </div>
@@ -53,8 +59,8 @@
             <label class="col-md-4 control-label" for="password">Email</label>
 
             <div class="col-md-4">
-                <input  type="email" name="email"  placeholder="Email"
-                       class="form-control input-md" required="">
+                <input  type="email" name="email"  value=""
+                class="form-control input-md" required="">
                 <span class="help-block">Please type in your email</span>
             </div>
         </div>
@@ -64,7 +70,7 @@
             <label class="col-md-4 control-label" for="name">Address</label>
 
             <div class="col-md-4">
-                <input  type="text" name="address"  placeholder="Address" class="form-control input-md"
+                <input  type="text" name="address"  value="" class="form-control input-md"
                        required="">
                 <span class="help-block">Please type in your  Address</span>
             </div>
@@ -75,8 +81,8 @@
             <label class="col-md-4 control-label" for="password">Phone</label>
 
             <div class="col-md-4">
-                <input type="number" name="phone"  placeholder="Phone number"
-                       class="form-control input-md" required="">
+                <input type="text" name="phone"  value=""
+                class="form-control input-md" required="">
                 <span class="help-block">Please provide your Mobile Number</span>
             </div>
         </div>
@@ -86,8 +92,7 @@
             <label class="col-md-4 control-label" for="name">School/Collage</label>
 
             <div class="col-md-4">
-                <input type="text" name="school"  placeholder="Name" class="form-control input-md"
-                       required="">
+                <input type="text" name="school"  value="" class="form-control input-md" required="">
                 <span class="help-block">Please type in your School/collage name</span>
             </div>
         </div>
@@ -97,8 +102,7 @@
             <label class="col-md-4 control-label" for="name">Mother's Name</label>
 
             <div class="col-md-4">
-                <input type="text" name="mname"  placeholder="Name" class="form-control input-md"
-                       required="">
+                <input type="text" name="mname"  value="" class="form-control input-md" required="">
                 <span class="help-block">Please type in your Mother's Name</span>
             </div>
         </div>
@@ -108,8 +112,7 @@
             <label class="col-md-4 control-label" for="name">Father's Name</label>
 
             <div class="col-md-4">
-                <input type="text" name="fname"  placeholder="Name" class="form-control input-md"
-                       required="">
+                <input type="text" name="fname"  value="" class="form-control input-md" required="">
                 <span class="help-block">Please type in your Father's Name</span>
             </div>
         </div>
@@ -119,26 +122,25 @@
             <label class="col-md-4 control-label">Photo</label>
 
             <div class="col-md-4">
-                <input name="img" type="file" class="form-control input-md" required="">
+               <img src="<?php echo $;?>" height="40px" width="50px"/></td>
                 <span class="help-block">Please provide your photo</span>
             </div>
         </div>
-
 
         <!-- Button (Double) -->
         <div class="form-group">
             <label class="col-md-4 control-label" for="button1id"></label>
 
             <div class="col-md-8">
-                <button type="submit" class="btn btn-success">Save</button>
-                <a id="cancel" name="cancel" class="btn btn-danger" href="#">
+                <button type="submit" name ="update" class="btn btn-success">Update</button>
+                <button type="reset" class="btn btn-danger">
                     Cancel</a>
             </div>
         </div>
     </form>
 </div>
-
-
-
+<?php
+}
+    ?>
 
 <?php include 'inc/footer.php'; ?>
