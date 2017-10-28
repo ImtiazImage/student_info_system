@@ -32,13 +32,13 @@
             <div class="col-md-4">
                 <div class="checkbox">
                     <label>
-                        <input  name="gender" value="1" type="radio">
+                        <input  name="gender" value="Male" type="radio">
                         Male
                     </label>
                 </div>
                 <div class="checkbox">
                     <label>
-                        <input name="gender" id="genderboxes-1" value="2" type="radio">
+                        <input name="gender" id="genderboxes-1" value="Female" type="radio">
                         Female
                     </label>
                 </div>
