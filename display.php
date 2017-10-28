@@ -5,16 +5,35 @@
     <div class="text-center">
         <h1 class="nice">Display Information</h1>
     </div>
-    <form class="form-horizontal" method="post" action="#" enctype="multipart/form-data">
+
+<!-- Display form data -->
+    <div class="form-horizontal">
+
+
+<table style="margin-left:80px;"width="100%">
+<tr >
+    <td >            
         <!-- Text input-->
         <div class="form-group">
             <label class="col-md-4 control-label" for="name">Name</label>
 
             <div class="col-md-4">
-                ..........
+                    ..........
             </div>
         </div>
+    </td>
 
+    <td width="20%" rowspan="2">
+        <!-- Select image -->
+        <div class="row">
+            <div class="form-group">
+                <img src="<?php echo $result['image'];?>" height="40px" width="50px"/>
+            </div>
+        </div>
+    </td>
+</tr>
+<tr>
+    <td >
         <!-- Select Date Of Birth-->
         <div class="row">
             <div class="form-group">
@@ -22,9 +41,15 @@
 
                 <div class="col-md-7">
                    ........
-                </div>
+             </div>
             </div>
         </div>
+    </td>
+
+
+</tr>
+</table>
+
         <!-- Gender Input -->
         <div class="form-group">
             <label class="col-md-4 control-label" for="checkboxes">Gender</label>
@@ -33,6 +58,7 @@
                 .........
             </div>
         </div>
+
         <!-- Email input-->
         <div class="form-group">
             <label class="col-md-4 control-label" for="password">Email</label>
@@ -42,30 +68,17 @@
  
             </div>
         </div>
-        <!-- Weight input-->
-        <div class="form-group">
-            <label class="col-md-4 control-label" for="password">Weight</label>
 
-            <div class="col-md-4">
-                ........
-            </div>
-        </div>
+
         <!-- Paddress input-->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="name">Permanent Address</label>
+            <label class="col-md-4 control-label" for="name">Address</label>
 
             <div class="col-md-4">
                 ........
             </div>
         </div>
-        <!-- Taddress input-->
-        <div class="form-group">
-            <label class="col-md-4 control-label" for="name">Temporary Address</label>
 
-            <div class="col-md-4">
-                .....            
-            </div>
-        </div>
         <!-- Phone input-->
         <div class="form-group">
             <label class="col-md-4 control-label" for="password">Phone</label>
@@ -82,14 +95,7 @@
                 .......
             </div>
         </div>
-        <!-- School Address input-->
-        <div class="form-group">
-            <label class="col-md-4 control-label" for="name">School/Collage Address</label>
 
-            <div class="col-md-4">
-                .........
-            </div>
-        </div>
         <!-- Mother Name input-->
         <div class="form-group">
             <label class="col-md-4 control-label" for="name">Mother's Name</label>
@@ -98,15 +104,6 @@
                .......
             </div>
         </div>
-        <!-- Mother Phone input-->
-        <div class="form-group">
-            <label class="col-md-4 control-label">Mother's Phone</label>
-
-            <div class="col-md-4">
-                ........
-            </div>
-        </div>
-
 
         <!-- Father Name input-->
         <div class="form-group">
@@ -116,30 +113,14 @@
                 .......
             </div>
         </div>
-        <!-- Father Phone input-->
-        <div class="form-group">
-            <label class="col-md-4 control-label">Father's Phone</label>
 
-            <div class="col-md-4">
-                .........
-            </div>
-        </div>
-
-
-        <!-- Button (Double) -->
-        <div class="form-group">
-            <label class="col-md-4 control-label" for="button1id"></label>
-
-            <div class="col-md-8">
-                <button type="submit" class="btn btn-success">Save</button>
-                <a id="cancel" name="cancel" class="btn btn-danger" href="#">
-                    Cancel</a>
-            </div>
-        </div>
-    </form>
+    </div>
 </div>
 
 
 
 
 <?php include 'inc/footer.php'; ?>
+
+
+
