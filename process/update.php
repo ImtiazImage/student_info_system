@@ -2,6 +2,9 @@
 include '../connection/connect.php';
 
 if (isset($_POST['update'])) {
+	$id = $_GET['id'];
+	$img =$_GET['img'];
+	unlink($img);
 	$std_name    = trim(mysqli_real_escape_string($db,$_POST['name']));
 	$std_dob     = trim(mysqli_real_escape_string($db,$_POST['dob']));
 	$std_gender  = trim(mysqli_real_escape_string($db,$_POST['gender']));
@@ -38,17 +41,13 @@ if (isset($_POST['update'])) {
 			 std_address='$std_address',std_phone='$std_phone',
 			 std_school='$std_school',std_mname='$std_mname',
 			 std_fname='$std_fname',std_img='$unique_img'
-			WHERE ....");
+			WHERE std_id='$id'");
 			 
 
 			if ($query) {
 				header("Location: ../index.php?msg=".urlencode("Data Updated Successfully!!"));
 			}else{
-				echo $std_name."<br />".$std_dob."<br />".$std_gender."<br />".$std_email;
-				echo "<br />".$std_address."<br />".$std_phone."<br />".$std_school."<br />";
-				echo $std_mname."<br />".$std_fname;
-				echo "<br />";
-				var_dump($query);
+				header("Location:../update.php?msg=".urlencode("Update Unsucessfull!!!"));
 			}
 		   }
     }

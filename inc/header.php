@@ -41,8 +41,9 @@ if (isset($_POST['login'])) {
 					if (isset($_SESSION['username'])) {
 						echo '<form action="inc/logout.php" method="POST">
 						<button type="submit" name="logout">Logout</button></form>';
-						echo '<button class="btn btn-success" style="margin-top:10px;">
-							<a href="register.php">Create</a></button>';
+						echo '<button class="btn btn-link" >
+							<a href="register.php" class="btn btn-link" style="margin-top:-15px;">Register</a></button>';
+						
 					} else {
 
 					echo	'<form action="" method="POST">
